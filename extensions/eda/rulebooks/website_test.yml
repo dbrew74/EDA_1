@@ -1,1 +1,21 @@
+---
+- name: Listen for events on webhook
+  hosts: web
+  source:
+    - ansible.eda.url_check:
+        urls:
+          - https://testbru1-aap-eval-01.apps.inh-dev.ocp.eu.boehringer.com
+        delay: 15
 
+  rules:
+    - name: website is up
+      condition: event.url_check.status == "up"
+      action:
+        run_playbook:
+          name: site_up.yml
+
+    - name: website is down
+      condition: event.url_check.status == "down"
+      action:
+        run_playbook:
+          name: site_down.yml
