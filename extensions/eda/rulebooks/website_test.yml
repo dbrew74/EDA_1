@@ -4,7 +4,7 @@
   source:
     - ansible.eda.url_check:
         urls:
-          - https://testbru1-aap-eval-01.apps.inh-dev.ocp.eu.boehringer.com
+          - www.google.com
         delay: 15
 
   rules:
