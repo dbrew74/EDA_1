@@ -14,9 +14,3 @@
         run_job_template:
           name: "Stat test 2"
           organization: BI-IT-AUTOMATION-INFIAC
-
-    - name: website is down
-      condition: event.url_check.status == "down"
-      action:
-        run_playbook:
-          name: site_down.yml
