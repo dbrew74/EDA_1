@@ -1,7 +1,7 @@
 ---
 - name: Listen for events on webhook
   hosts: web
-  source:
+  sources:
     - ansible.eda.url_check:
         urls:
           - www.google.com
