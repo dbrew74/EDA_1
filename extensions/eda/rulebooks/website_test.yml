@@ -2,7 +2,8 @@
 - name: Listen for events on webhook
   hosts: web
   sources:
-    - ansible.eda.url_check:
+    - name: check google
+      ansible.eda.url_check:
         urls:
           - www.google.com
         delay: 15
