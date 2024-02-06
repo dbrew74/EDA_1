@@ -2,15 +2,14 @@
 - name: Listen for events on webhook
   hosts: web
   sources:
-    - name: check google
-      ansible.eda.url_check:
+    - ansible.eda.url_check:
         urls:
           - www.google.com
         delay: 15
 
   rules:
-    - name: website is up
-      condition: event.url_check.status == "up"
+    - name: website is down
+      condition: event.url_check.status == "down"
       action:
         run_job_template:
           name: "Stat test 2"
